@@ -1,5 +1,10 @@
+Steps:
+1) create a map object
+2) create a feature group object
+3) add_child to feature group object
+4) add featuregroup to map
+5) save map
 
 
-
-
+for Folium documentation refer:
 https://python-visualization.github.io/folium/
