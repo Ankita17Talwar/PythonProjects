@@ -44,3 +44,13 @@ map.add_child(fg)
 map.save("output/Map_icon_color.html")
 
 
+map = folium.Map(location=[38.58,-99.89], zoom_start=5, tiles = tiles)
+# Add Circle marker
+fg = folium.FeatureGroup(name="My Map")
+
+for lt,ln, el in zip(lat, lon, elev):
+    fg.add_child(folium.CircleMarker(location=[lt,ln], radius =10, popup=el, fill_color= get_color(el), color='grey',fill_opacity=0.7))
+
+map.add_child(fg)
+map.save("output/Map_circle_icon.html")
+
