@@ -8,9 +8,15 @@ def enhance_brightness(inp_img, factor):
     new_img = img_enh_obj.enhance(factor)
     # low factor -> less color(brightness, contrast etc), 1= retunrs same quality image
 
-    new_img.save('Output\ImageEnhance\enhanced_img.jpg')
+    new_img.save('Output\ImageEnhance\enhanced_brigh_img.jpg')
 
+def enhance_contrast(inp_img,factor):
+    img = Image.open(inp_img)
+    img_enh_obj = ImageEnhance.Contrast(img)
 
+    new_img = img_enh_obj.enhance(factor)
+    new_img.save('Output\ImageEnhance\enhanced_Bri_contrast_img.jpg')
 
 if __name__ == '__main__':
-    enhance_brightness('data\images\low_bright.jpg', 2.5)
+    enhance_brightness('data\images\sample_img1.jpg', 2.5)
+    enhance_contrast(r'Output\ImageEnhance\enhanced_brigh_img.jpg', 1.5)
