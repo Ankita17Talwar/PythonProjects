@@ -1,5 +1,5 @@
 # Face Detection
-# https://github.com/anaustinbeing/haar-cascade-files  :: to get haarcascade files
+# https://github.com/opencv/opencv/tree/master/data/haarcascades :: to get haarcascade files
 import cv2
 
 # 1. create front face cascade classifier
