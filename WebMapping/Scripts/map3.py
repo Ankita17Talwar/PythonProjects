@@ -42,5 +42,9 @@ for lt, ln, el in zip(lat,lon,elev):
     fg.add_child(fl.CircleMarker(location=[lt,ln], radius =10, popup=el, fill_color= get_color(el),
     color='grey',fill_opacity=0.7))
 
+fg.add_child(fl.GeoJson(data=(open('Data\world.json', 'r', encoding='utf-8-sig')).read(),
+ style_function= lambda x: {'fillColor': 'yellow' if x['properties']['POP2005']< 10000000 
+ else 'orange' if 10000000 <= x['properties']['POP2005'] < 20000000 else 'red'} ))
+
 map.add_child(fg)
 map.save("output/Map_circleMrk_polygon.html")
