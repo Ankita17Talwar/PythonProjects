@@ -29,22 +29,29 @@ def read_data_csv(file_name):
     lon = list(df['LON'])
     elev = list(df['ELEV'])
     name = list(df["NAME"])
-    print(elev)
 
 read_data_csv('Data\Volcanoes.txt')
 
 
 map = fl.Map(location=[38.58,-99.89], zoom_start=5, tiles = tiles)
 
-fg = fl.FeatureGroup(name='Map_with_markers&Polygon')
+fgv = fl.FeatureGroup(name='Volcanoes')
 
 for lt, ln, el in zip(lat,lon,elev):
-    fg.add_child(fl.CircleMarker(location=[lt,ln], radius =10, popup=el, fill_color= get_color(el),
+    fgv.add_child(fl.CircleMarker(location=[lt,ln], radius =10, popup=el, fill_color= get_color(el),
     color='grey',fill_opacity=0.7))
 
-fg.add_child(fl.GeoJson(data=(open('Data\world.json', 'r', encoding='utf-8-sig')).read(),
+fgp = fl.FeatureGroup(name='Population')
+
+fgp.add_child(fl.GeoJson(data=(open('Data\world.json', 'r', encoding='utf-8-sig')).read(),
  style_function= lambda x: {'fillColor': 'yellow' if x['properties']['POP2005']< 10000000 
  else 'orange' if 10000000 <= x['properties']['POP2005'] < 20000000 else 'red'} ))
 
-map.add_child(fg)
+map.add_child(fgv)
+map.add_child(fgp)
+
+# adding a control layer
+map.add_child(fl.LayerControl())
+
+
 map.save("output/Map_circleMrk_polygon.html")
