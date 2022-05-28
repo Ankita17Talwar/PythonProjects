@@ -14,6 +14,7 @@ for (x1, y1, w1, h1) in faces:
     face_gray= gray[y1:y1 + h1, x1:x1 + w1]
     face_color = img[y1:y1 + h1, x1:x1 + w1]
     smiles = smile_cascade.detectMultiScale(face_gray, 1.5, 8)
+    # smiles = smile_cascade.detectMultiScale(face_gray, 1.3, 15) - worked for larger faces
     for (x, y , w ,h) in smiles:
 
         cv2.rectangle(face_color, (x,y), (x+w, y+h), (0, 0 ,255), 3)
