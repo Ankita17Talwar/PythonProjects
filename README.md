@@ -16,6 +16,6 @@ get haar cascade file from https://github.com/anaustinbeing/haar-cascade-files
 
 2) Smile and Eyes Detection using opencv2
 
-3) ImageEnhancer : Brightness , contrast and Color
+3) ImageEnhancer : Brightness , contrast , Sharpness,
  Library : Pillow
 5) s
