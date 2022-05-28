@@ -11,6 +11,11 @@ First : Interactive Web Maps
 Second: Image Processing
 
 1) Face Detection
+Library : OpenCV (cv2)
 get haar cascade file from https://github.com/anaustinbeing/haar-cascade-files
 
-3) cc
+2) Smile and Eyes Detection using opencv2
+
+3) ImageEnhancer : Brightness , contrast and Color
+ Library : Pillow
+5) s
