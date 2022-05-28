@@ -8,4 +8,9 @@ First : Interactive Web Maps
         3) Add Volcanoes markers and Population data (as Polygon) on map. It also adds a control layer to enable or disable either of the two. (Map3 in Output folder)
       '''
 
-Second: 
+Second: Image Processing
+
+1) Face Detection
+get haar cascade file from https://github.com/anaustinbeing/haar-cascade-files
+
+3) cc
